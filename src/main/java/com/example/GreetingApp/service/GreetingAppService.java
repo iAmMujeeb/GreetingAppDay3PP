@@ -11,4 +11,6 @@ public interface GreetingAppService {
     Optional<GreetingApp> getMessageById(int id);
 
     List<GreetingApp> getAllMessage();
+
+    GreetingApp updateMessage(int id, GreetingApp greetingApp);
 }

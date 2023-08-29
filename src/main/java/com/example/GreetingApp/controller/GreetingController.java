@@ -49,8 +49,13 @@ public class GreetingController {
     }
 
     @GetMapping("/getall")
-    public List<GreetingApp> getAllMessage(){
+    public List<GreetingApp> getAllMessages(){
         return userService.getAllMessage();
+    }
+
+    @PutMapping("/Update/{id}")
+    public GreetingApp updateMessage(@PathVariable int id, @RequestBody GreetingApp greetingApp){
+        return userService.updateMessage(id, greetingApp);
     }
 
 }

@@ -30,4 +30,14 @@ public class GreetingAppServiceImp implements GreetingAppService {
         return userRepository.findAll();
     }
 
+    @Override
+    public GreetingApp updateMessage(int id, GreetingApp greetingApp) {
+        Optional<GreetingApp> messageData = getMessageById(id);
+        if(messageData.isPresent()){
+            messageData.get().setMessage(greetingApp.getMessage());
+            return userRepository.save(messageData.get());
+        }
+        return null;
+    }
+
 }
