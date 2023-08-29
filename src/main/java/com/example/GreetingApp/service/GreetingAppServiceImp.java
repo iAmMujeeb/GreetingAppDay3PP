@@ -5,6 +5,8 @@ import com.example.greetingapp.repository.GreetingAppRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class GreetingAppServiceImp implements GreetingAppService {
 
@@ -15,4 +17,10 @@ public class GreetingAppServiceImp implements GreetingAppService {
     public GreetingApp addUser(GreetingApp user) {
         return userRepository.save(user);
     }
+
+    @Override
+    public Optional<GreetingApp> getMessageById(int id) {
+        return userRepository.findById(id);
+    }
+
 }
