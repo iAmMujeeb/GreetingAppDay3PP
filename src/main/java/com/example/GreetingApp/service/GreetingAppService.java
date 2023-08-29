@@ -13,4 +13,6 @@ public interface GreetingAppService {
     List<GreetingApp> getAllMessage();
 
     GreetingApp updateMessage(int id, GreetingApp greetingApp);
+
+    String deleteMessageById(int id);
 }
