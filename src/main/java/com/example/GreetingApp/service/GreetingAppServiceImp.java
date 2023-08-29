@@ -4,7 +4,9 @@ import com.example.greetingapp.model.GreetingApp;
 import com.example.greetingapp.repository.GreetingAppRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,6 +23,11 @@ public class GreetingAppServiceImp implements GreetingAppService {
     @Override
     public Optional<GreetingApp> getMessageById(int id) {
         return userRepository.findById(id);
+    }
+
+    @Override
+    public List<GreetingApp> getAllMessage() {
+        return userRepository.findAll();
     }
 
 }
