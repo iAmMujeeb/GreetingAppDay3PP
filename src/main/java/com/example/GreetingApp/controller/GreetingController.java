@@ -44,18 +44,23 @@ public class GreetingController {
     }
 
     @GetMapping("/getbyid/{id}")
-    public Optional<GreetingApp> getMessageById(@PathVariable int id){
+    public Optional<GreetingApp> getMessageById(@PathVariable int id) {
         return userService.getMessageById(id);
     }
 
     @GetMapping("/getall")
-    public List<GreetingApp> getAllMessages(){
+    public List<GreetingApp> getAllMessages() {
         return userService.getAllMessage();
     }
 
     @PutMapping("/Update/{id}")
-    public GreetingApp updateMessage(@PathVariable int id, @RequestBody GreetingApp greetingApp){
+    public GreetingApp updateMessage(@PathVariable int id, @RequestBody GreetingApp greetingApp) {
         return userService.updateMessage(id, greetingApp);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteMessageById(@PathVariable int id) {
+        return userService.deleteMessageById(id);
     }
 
 }
